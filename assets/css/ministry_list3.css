@@ -6,6 +6,29 @@ body, html {
     display: block;
 }
 
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+    height: 2px;
+    width: 7px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00945e9e;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00945e9e;
+}
+  
+
 .content{
     width: 100%;
     height: 900px;
@@ -71,10 +94,11 @@ body, html {
     margin-bottom: 0;
 }
 
-.handle{
+.handle a{
     color: #6765EC;
 }
-.handle:hover{
+.handle a:hover{
+    text-decoration: none;
     cursor: pointer;
     color: #43419d;
 }
@@ -143,28 +167,50 @@ body, html {
     border-bottom-color: #00945E;
 }
 
+.cabinet-info::after{
+    content: '';
+    width: 5px;
+}
+
 .cabinet-images{
-    height: 90%;
+    height: 80%;
     display: flex;
-    margin: 3% auto;
+    margin: 7% auto 0 auto;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.card{
-    width: 17rem;
-    padding: 2px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+.card-component{
+    height: 95%;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 2px #A1A3A8;
 }
 
-.card-body p, h5{
+.card-component .card-img{
+    height: 70%;
+    width: 90%;
+}
+
+.card-content{
+    margin-top: 2%;
+}
+
+.card-content p, h5{
     margin-block-start: 0;
     margin-block-end: 0;
     text-align: center;
     line-height: 1.2;
 }
 
-.card-body h5{
+.card-content .post{
+    margin-bottom: 0.45rem;
+}
+
+.card-content h5{
     line-height: 0.6;
 }
 
@@ -175,19 +221,36 @@ body, html {
 
 .socials{
     display: flex;
-    width: 80%;
+    width: 60%;
     margin: 3% auto 0 auto;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
+footer{
+    margin-top: auto;
+}
 
 .socials img:hover{
     cursor: pointer;
 }
 
 /* start of media queries */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 900px){
+    .cabinet-images{
+        width: 80%;
+        display: flex;
+	    flex-wrap:wrap;
+        flex-direction: row;
+        overflow-y: scroll;
+    }
+    .card-component{
+        margin: 2%;
+        height: 342px;
+    }
+}
+
+@media screen and (max-width: 770px) {
     .content{
         height: 1400px;
     }
@@ -208,19 +271,14 @@ body, html {
         flex-wrap: inherit;
     }
     .info{
-	margin-bottom: 4%;
-     }
-    .cabinet-info{
-        margin-top: 15%;
+	    margin-bottom: 4%;
     }
     .cabinet-images{
-        display: flex;
-        flex-direction: column;
-        justify-content: inherit;
+        height: 90%;
+        margin:  15% auto 0 auto;
     }
-    .card{
-        width: 19rem;
-        margin: 3% auto;
+    .cabinet-info{
+        margin-top: 15%;
     }
     .info p{
         text-align: center;
@@ -245,6 +303,18 @@ body, html {
     }
 } 
 
+@media screen and (max-width:600px){
+    .cabinet-images{
+        margin: 19% auto 0 auto;
+    }
+}
+
+@media screen and (max-width:430px){
+    .cabinet-images{
+        margin: 22% auto 0 auto;
+    }
+}
+
 @media (min-width:768px) and (max-width: 1024px) {
     .basic-info{
         margin-top: 5%;
@@ -261,6 +331,9 @@ body, html {
     .info{
         margin-right: 0;
     }
+    .cabinet-images{
+        margin: 10% auto 0 auto;
+    }
 } 
 
 
@@ -274,17 +347,9 @@ body, html {
     .nav-link{
         font-size: 12px;
     }
-}
-  
-@media (min-width:780px) and (max-width: 900px) {
     .cabinet-images{
-        display: flex;
-	flex-wrap;
-        flex-direction: row;
-    }
-    .card{
-        width: 25rem;
-        margin: 3% 2%;
+        height: 90%;
+        margin:  auto auto 0 auto;
     }
 }
 

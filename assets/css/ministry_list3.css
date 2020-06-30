@@ -243,7 +243,7 @@ body, html {
     .shrink{
         width: 20%;
     }
-}  
+} 
 
 @media (min-width:768px) and (max-width: 1024px) {
     .basic-info{
@@ -256,6 +256,13 @@ body, html {
         font-size: 24px;
     }
 }
+
+@media (min-width:768px) and (max-width: 780px) {
+    .info{
+        margin-right: 0;
+    }
+} 
+
 
 @media screen and (max-width: 325px) {
     .content{

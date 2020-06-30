@@ -225,6 +225,9 @@ body, html {
     .info p{
         text-align: center;
     }
+    .first{
+        font-weight:500
+     }
     .second{
         font-size: 17px;
     }

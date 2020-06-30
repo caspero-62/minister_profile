@@ -207,6 +207,9 @@ body, html {
         align-content: center;
         flex-wrap: inherit;
     }
+    .info{
+	margin-bottom: 4%;
+     }
     .cabinet-info{
         margin-top: 15%;
     }
